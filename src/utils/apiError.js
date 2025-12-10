@@ -1,4 +1,4 @@
-class ApiError extends Error {
+class apiError extends Error {
     constructor(
         message="Internal Server Error", 
         statusCode=500,
@@ -20,4 +20,4 @@ class ApiError extends Error {
     }
 }
 
-export default ApiError;
+export {apiError};
