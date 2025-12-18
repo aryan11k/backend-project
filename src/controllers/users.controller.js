@@ -14,8 +14,8 @@ const registerUser = asyncHandler(async (req, res) =>{
     //remove password and refresh token from the response
     // send response back to the client
 
-    const{ fullName, email, password, username } = req.body;
-    console.log("email: ",email);
+    const{ fullName, email, password, username } = req.body;  
+    // console.log("email: ",email);
 
     if(
         [fullName, email, password, username].some(field => field?.trim() === "")
@@ -31,7 +31,7 @@ const registerUser = asyncHandler(async (req, res) =>{
     
 
     if(existedUser){
-        throw new apiError(409, "User already exists with this email or username");
+        throw new apiError(400, "User already exists with this email or username");
     }
 
     
